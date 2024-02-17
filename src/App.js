@@ -2,19 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SplashLayout from './Layouts/Splash'; // Import the Layout component
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <div>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
+        <SplashLayout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
           </Routes>
-        </div>
+        </SplashLayout>
       </Router>
     </div>
   );
