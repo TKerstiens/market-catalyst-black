@@ -1,30 +1,51 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { AuthProvider, useAuth } from './Authentication/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SplashLayout from './Layouts/Splash'; // Import the Layout component
 
-function App() {
+import SplashLayout from './Layouts/Splash';
+import AuthenticatedLayout from './Layouts/Authenticated';
+
+import Login from './Pages/Login';
+import Logout from './Pages/Logout';
+function Home() {
+  return <h2>HOME</h2>
+}
+
+function AppRoutes() {
+  const auth = useAuth();
+
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      {auth == undefined || !auth.isLoggedIn ? (
         <SplashLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
           </Routes>
         </SplashLayout>
-      </Router>
-    </div>
+      ) : (
+        <AuthenticatedLayout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+          </Routes>
+        </AuthenticatedLayout>
+      )}
+    </Router>
   );
 }
 
-function Home() {
-  return <h2>Home Page</h2>;
-}
+const App = () => (
+  <div className="App">
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  </div>
+);
 
-function About() {
-  return <h2>About Page</h2>;
-}
 
 export default App;

@@ -6,7 +6,7 @@ const Splash = ({ children }) => {
     <div>
       <nav>
         {/* Navigation Links */}
-        <Link to="/">Home</Link> | <Link to="/login">Login</Link>
+        <Link to="/">Home</Link> | <Link to="/logout">Logout</Link>
       </nav>
 
       <main>{children}</main>
