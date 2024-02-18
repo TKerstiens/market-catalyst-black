@@ -10,7 +10,9 @@ import AuthenticatedLayout from './Layouts/Authenticated';
 import Login from './Pages/Login';
 import Logout from './Pages/Logout';
 function Home() {
-  return <h2>HOME</h2>
+  return (
+    <h2>Home sweet home</h2>
+  );
 }
 
 function AppRoutes() {
@@ -18,7 +20,7 @@ function AppRoutes() {
 
   return (
     <Router>
-      {auth == undefined || !auth.isLoggedIn ? (
+      {auth === undefined || !auth.isLoggedIn ? (
         <SplashLayout>
           <Routes>
             <Route path="/" element={<Home />} />
