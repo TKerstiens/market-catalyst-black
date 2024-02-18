@@ -9,6 +9,8 @@ import AuthenticatedLayout from './Layouts/Authenticated';
 
 import Login from './Pages/Login';
 import Logout from './Pages/Logout';
+import Register from './Pages/Register';
+
 function Home() {
   return (
     <h2>Home sweet home</h2>
@@ -24,6 +26,7 @@ function AppRoutes() {
         <SplashLayout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
           </Routes>

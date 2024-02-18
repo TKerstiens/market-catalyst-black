@@ -17,8 +17,12 @@ const Splash = ({ children }) => {
                         <li style={{border: "1px solid #F0F0F0", marginTop: "-1px"}}><Link className="nav-link" to="/quote">Live Quote</Link></li>
                     </ul>
                 </li>
-                <li>
-                  <Link className="nav-link" to="/login">Login</Link>
+                <li className="dropdown">
+                  <Link className="nav-link" to="#">Login / Signup</Link>
+                  <ul className="dropdown-content">
+                    <li style={{border: "1px solid #F0F0F0"}}><Link className="nav-link" to="/register">Register</Link></li>
+                    <li style={{border: "1px solid #F0F0F0", marginTop: "-1px"}}><Link className="nav-link" to="/login">Login</Link></li>
+                  </ul>
                 </li>
             </ul>
         </nav>
