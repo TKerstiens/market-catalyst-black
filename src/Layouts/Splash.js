@@ -1,34 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Styles/LayoutCommon.module.css';
 
 const Splash = ({ children }) => {
   return (
     <div>
-      <div className="header">
-        <nav className="navbar">
-            <ul className="nav-list">
-                <li>
-                    <Link className="nav-link" to="/">Home</Link>
-                </li>
-                <li className="dropdown">
-                    <Link className="nav-link" to="#">Data</Link>
-                    <ul className="dropdown-content">
-                        <li style={{border: "1px solid #F0F0F0"}}><Link className="nav-link" to="/quote">15 Minute Delayed Quote</Link></li>
-                        <li style={{border: "1px solid #F0F0F0", marginTop: "-1px"}}><Link className="nav-link" to="/quote">Live Quote</Link></li>
-                    </ul>
-                </li>
-                <li className="dropdown">
-                  <Link className="nav-link" to="#">Login / Signup</Link>
-                  <ul className="dropdown-content">
-                    <li style={{border: "1px solid #F0F0F0"}}><Link className="nav-link" to="/register">Register</Link></li>
-                    <li style={{border: "1px solid #F0F0F0", marginTop: "-1px"}}><Link className="nav-link" to="/login">Login</Link></li>
-                  </ul>
-                </li>
-            </ul>
-        </nav>
-      </div>
+      <nav className={`${styles.navbarContainer} navbar-expand-md navbar-light bg-light`}>
+        <div className="container">
+          <ul className={`${styles.navList} row`}>
+            <li className="col-md-3">
+              <Link className="navbar-brand" to="/">TKerstiens</Link>
+            </li>
+            <li className="col-md-3">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className={`${styles.dropdownHover} dropdown col-md-3`}>
+              <span className="nav-link">Data</span>
+              <ul className={`${styles.dropdownContent} bg-light`}>
+                <li><Link className="nav-link" to="/quote">15 Minute Delayed Quote</Link></li>
+                <hr className={styles.dropdownSeparator} />
+                <li><Link className="nav-link" to="/quote">Live Quote</Link></li>
+              </ul>
+            </li>
+            <li className={`${styles.dropdownHover} dropdown col-md-3`}>
+              <span className="nav-link">Login / Signup</span>
+              <ul className={`${styles.dropdownContent} bg-light`}>
+                <li><Link className="nav-link" to="/register">Register</Link></li>
+                <hr className={styles.dropdownSeparator} />
+                <li><Link className="nav-link" to="/login">Login</Link></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-      <main className="main">{children}</main>
+      {/* Main content area using CSS Module styles */}
+      <main className={styles.mainContent}>{children}</main>
     </div>
   );
 };

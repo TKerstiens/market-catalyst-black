@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 
 import { AuthProvider, useAuth } from './Authentication/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';

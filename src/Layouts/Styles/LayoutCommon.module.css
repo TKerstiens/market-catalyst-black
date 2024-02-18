@@ -1,0 +1,69 @@
+/* LayoutCommon.module.css */
+
+.navbarContainer {
+    overflow: visible;
+    background-color: #282828;
+    position: relative;
+    z-index: 500;
+    text-align: center;
+    max-width: 100%;
+    display: block;
+    justify-content: space-around;
+}
+
+.navList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #282828;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1000;
+    flex-direction: column;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .25em;
+}
+
+.dropdownContentLiFirst {
+  margin-top: 0;
+}
+
+.dropdownContentLi {
+  border: 1px solid #F0F0F0 !important;
+  margin-top: -1px;
+}
+
+.dropdownHover:hover .dropdownContent {
+    display: flex;
+}
+
+.mainContent {
+    background-color: #383838;
+    color: #ffffff;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dropdownSeparator {
+    margin: .25em 0;
+}

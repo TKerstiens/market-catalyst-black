@@ -1,0 +1,17 @@
+// _custom.scss
+
+// Color Overrides
+$primary: #76b7b2; // A soothing teal
+$secondary: #f4e077; // A warm yellow
+$success: #82c91e; // A vibrant green
+$info: #1c7ed6; // A deep blue
+$warning: #fcc419; // A bright yellow
+$danger: #fa5252; // A strong red
+$light: #f8f9fa; // Default light
+$dark: #343a40; // Default dark
+
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+@import '../../node_modules/bootstrap/scss/bootstrap';

@@ -43,40 +43,38 @@ function Register() {
   };
 
   return (
-    <div>
-      {errorMessage && <div className="error-box">{errorMessage}</div>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+    <div className="container mt-3">
+      {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+
+      
+      <form onSubmit={handleSubmit} className="needs-validation" noValidate>
+        <div className="mb-3">
+          <label htmlFor="username" className="form-label">Username:</label>
+          <input type="text" className="form-control" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          <div className="invalid-feedback">
+            Please choose a username.
+          </div>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">Password:</label>
+          <input type="password" className="form-control" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <div className="invalid-feedback">
+            Please enter your password.
+          </div>
         </div>
-        <div>
-          <label htmlFor="confirmP">Confirm Password:</label>
-          <input
-            type="confirmP"
-            id="confirmP"
-            name="confirmP"
-            value={confirmP}
-            onChange={(e) => setConfirmP(e.target.value)}
-          />
+
+        <div className="mb-3">
+          <label htmlFor="confirmP" className="form-label">Confirm Password:</label>
+          <input type="password" className="form-control" id="confirmP" name="confirmP" value={confirmP} onChange={(e) => setConfirmP(e.target.value)} required />
+          <div className="invalid-feedback">
+            Please confirm your password.
+          </div>
         </div>
-        <button type="submit">Sign Up</button>
+
+        <div className="text-center">
+          <button type="submit" className="btn btn-primary">Sign Up</button>
+        </div>
       </form>
     </div>
   );
